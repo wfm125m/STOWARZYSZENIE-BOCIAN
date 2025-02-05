@@ -36,8 +36,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const newsFeed = document.getElementById('news-feed');
 
-            // Fetch news articles from the local JSON file
-            fetch('news.json')
+            // Fetch news articles from the serverless function
+            fetch('/.netlify/functions/news')
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(article => {
