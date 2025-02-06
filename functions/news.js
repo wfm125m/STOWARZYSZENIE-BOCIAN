@@ -2,39 +2,43 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event, context) => {
-    const filePath = path.resolve(__dirname, '/news.json'); // Adjust the path to point to the correct location
+    const filePath = path.resolve(__dirname, '../public/news.json'); // Adjust the path to point to the correct location
 
     if (event.httpMethod === 'GET') {
         try {
             const data = fs.readFileSync(filePath, 'utf-8');
+            console.log('Data read successfully:', data); // Log the data read
             return {
                 statusCode: 200,
                 body: data,
             };
         } catch (err) {
+            console.error('Error reading news file:', err); // Log the error
             return {
                 statusCode: 500,
-                body: 'Error reading news file',
+                body: JSON.stringify({ error: 'Error reading news file' }),
             };
         }
     } else if (event.httpMethod === 'POST') {
         try {
             const newData = JSON.parse(event.body);
             fs.writeFileSync(filePath, JSON.stringify(newData, null, 2));
+            console.log('Data written successfully:', newData); // Log the data written
             return {
                 statusCode: 200,
-                body: 'News updated successfully',
+                body: JSON.stringify({ message: 'News updated successfully' }),
             };
         } catch (err) {
+            console.error('Error writing news file:', err); // Log the error
             return {
                 statusCode: 500,
-                body: 'Error writing news file',
+                body: JSON.stringify({ error: 'Error writing news file' }),
             };
         }
     } else {
         return {
             statusCode: 405,
-            body: 'Method Not Allowed',
+            body: JSON.stringify({ error: 'Method Not Allowed' }),
         };
     }
 };

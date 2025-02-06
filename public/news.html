@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aktualności - Stowarzyszenie BOCIAN</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-post {
+            border-bottom: 1px solid #ccc;
+            padding: 20px 0;
+        }
+        .blog-post h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .blog-post p {
+            margin: 10px 0;
+        }
+        .blog-post small {
+            color: #888;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -38,13 +54,25 @@
 
             // Fetch news articles from the serverless function
             fetch('/.netlify/functions/news')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
                 .then(data => {
+                    console.log('Fetched data:', data); // Log the fetched data
+                    if (data.error) {
+                        console.error('Error:', data.error);
+                        return;
+                    }
                     data.forEach(article => {
-                        const articleElement = document.createElement('article');
+                        const articleElement = document.createElement('div');
+                        articleElement.classList.add('blog-post');
                         articleElement.innerHTML = `
                             <h3>${article.title}</h3>
-                            <p>${article.summary} <a href="${article.url}">Read more...</a></p>
+                            <p>${article.summary}</p>
+                            <p><a href="${article.url}">Read more...</a></p>
                             <p><small>Published on: ${article.publishedAt}</small></p>
                         `;
                         newsFeed.appendChild(articleElement);
