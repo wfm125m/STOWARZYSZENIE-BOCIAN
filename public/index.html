@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stowarzyszenie BOCIAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Stowarzyszenie BOCIAN wspiera Szkołę Polską im. Marianny Orańskiej przy Ambasadzie RP w Hadze.">
+    <meta name="keywords" content="Stowarzyszenie BOCIAN, Szkoła Polska, Haga, edukacja, wsparcie">
+</head>
+<body>
+    <header>
+        <div class="header-images">
+            <img src="images/bocian_długi.png" alt="Stowarzyszenie BOCIAN Logo" class="main-logo">
+            <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" class="logo">
+          </div>       
+        <h1>Witamy na stronie STOWARZYSZENIA BOCIAN</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">Aktualności</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>O STOWARZYSZENIU</h2>
+            <p>
+                Stowarzyszenie BOCIAN zostało założone w roku 2019 w Hadze. Ogólnym celem organizacji jest wspieranie Szkoły Polskiej im. Marianny Orańskiej przy Ambasadzie RP w Hadze. Pomoc w funkcjonowaniu szkoły odbywa się wieloaspektowo i na różnych płaszczyznach. Placówka edukacyjna może w ten sposób poszerzać swoją działalność, czynić ją bardziej profesjonalną a przede wszystkim, za przyczyną stowarzyszenia, może działać jako pełnoprawny podmiot finansowy na rynku holenderskim. BOCIAN pozyskuje środki finansowe na dodatkowe aktywności szkoły, takie jak: działalność szkolnego psychologa, szkolnego logopedy, środki na różne uroczystości, jubileusze i imprezy okolicznościowe. Wszystkie te aktywności znacząco wspierają proces edukacji i efektywnie pomagają zarówno uczniom jak i ich rodzicom.
+            </p>
+        </section>       
+    </main>
+    <footer>
+        <p>&copy; 2025 Stowarzyszenie BOCIAN. All rights reserved.</p>
+        <p>Follow us on 
+            <a href="https://facebook.com">Facebook</a>, 
+            <a href="https://twitter.com">Twitter</a>, 
+            <a href="https://instagram.com">Instagram</a>
+        </p>
+        <button onclick="topFunction()" id="backToTopBtn">Back to Top</button>
+    </footer>
+    <script>
+        // Back to Top Button Script
+        var mybutton = document.getElementById("backToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktualności - Stowarzyszenie BOCIAN</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-post {
+            border-bottom: 1px solid #ccc;
+            padding: 20px 0;
+        }
+        .blog-post h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .blog-post p {
+            margin: 10px 0;
+        }
+        .blog-post small {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-images">
+            <img src="images/bocian_długi.png" alt="Stowarzyszenie BOCIAN Logo" class="main-logo">
+            <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" class="logo">
+        </div> 
+        <h1>Aktualności</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">Aktualności</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="news-feed">
+            <h2>Aktualności</h2>
+            <p>Wszystkie najnowsze wiadomości i aktualizacje dotyczące Stowarzyszenia BOCIAN.</p>
+        </section>        
+    </main>
+    <footer>
+        <p>&copy; 2025 Stowarzyszenie BOCIAN. All rights reserved.</p>
+        <p>Follow us on 
+            <a href="https://facebook.com">Facebook</a>, 
+            <a href="https://twitter.com">Twitter</a>, 
+            <a href="https://instagram.com">Instagram</a>
+        </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsFeed = document.getElementById('news-feed');
+
+            // Fetch news articles from the serverless function
+            fetch('/.netlify/functions/news')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Fetched data:', data); // Log the fetched data
+                    if (data.error) {
+                        console.error('Error:', data.error);
+                        return;
+                    }
+                    data.forEach(article => {
+                        const articleElement = document.createElement('div');
+                        articleElement.classList.add('blog-post');
+                        articleElement.innerHTML = `
+                            <h3>${article.title}</h3>
+                            <p>${article.summary}</p>
+                            <!--<p><a href="${article.url}">Read more...</a></p> -->
+                            <p><small>Published on: ${article.publishedAt}</small></p>
+                        `;
+                        newsFeed.appendChild(articleElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching news:', error));
+        });
+    </script>
+</body>
+</html>

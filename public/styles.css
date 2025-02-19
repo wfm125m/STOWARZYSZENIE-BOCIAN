@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #26f52d;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-images {
+    position: relative;
+    display: inline-block;
+    max-width: 100%; /* Ensure the container does not exceed the viewport width */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.header-images img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-images .main-logo {
+    width: 100%; /* Ensure the main logo fits within the container */
+}
+
+.header-images .logo {
+    position: absolute;
+    top: 50%;
+    right: 0; /* Position the logo to the right side */
+    transform: translateY(-50%);
+    width: 20%; /* Adjust the size as needed */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    padding-bottom: 60px; /* Adjust this value as needed */
+}
+
+footer {
+    background-color: #080707;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+    main {
+        padding-bottom: 80px; /* Increase padding for smaller screens if needed */
+    }
+}
