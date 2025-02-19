@@ -1,8 +1,8 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 
 exports.handler = async (event, context) => {
-    const filePath = path.join(__dirname, 'news.json'); // Adjust the path to point to the correct location
+    const filePath = path.join(__dirname, "news.json"); // Adjust the path to point to the correct location
 
     if (event.httpMethod === 'GET') {
         try {
