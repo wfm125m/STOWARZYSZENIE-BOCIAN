@@ -1,9 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 
+const getPath = () => {
+	return path.join(process.cwd(), "news.json");
+};
+
+const touched = { current: false };
+
+// "Touch" the shiki assets so that Vercel will include them in the production
+// bundle. This is required because shiki itself dynamically access these files,
+// so Vercel doesn't know about them by default
+const touchShikiPath = () => {
+	if (touched.current) return; // only need to do once
+	fs.readdir(getPath()); // fire and forget
+	touched.current = true;
+};
+
+
+
 exports.handler = async (event, context) => {
+    touchShikiPath
     const filePath = path.join(__dirname, "news.json"); // Adjust the path to point to the correct location
 
+    
     if (event.httpMethod === 'GET') {
         try {
             const data = fs.readFileSync(filePath, 'utf-8');
