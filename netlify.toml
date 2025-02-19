@@ -3,4 +3,4 @@
   publish = "public"
 [functions]
   directory = "functions"
-  included_files = ["functions/news.json"]
+  included_files = ["public/news.json"]
