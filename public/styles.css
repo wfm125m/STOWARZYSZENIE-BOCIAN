@@ -7,10 +7,36 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #26f52d;
     color: white;
     padding: 10px 0;
     text-align: center;
+}
+
+.header-images {
+    position: relative;
+    display: inline-block;
+    max-width: 100%; /* Ensure the container does not exceed the viewport width */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.header-images img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-images .main-logo {
+    width: 100%; /* Ensure the main logo fits within the container */
+}
+
+.header-images .logo {
+    position: absolute;
+    top: 50%;
+    right: 0; /* Position the logo to the right side */
+    transform: translateY(-50%);
+    width: 20%; /* Adjust the size as needed */
+    height: auto;
 }
 
 nav ul {

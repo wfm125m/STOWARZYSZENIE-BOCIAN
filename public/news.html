@@ -24,7 +24,10 @@
 </head>
 <body>
     <header>
-        <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" style="width:100px;height:auto;">
+        <div class="header-images">
+            <img src="images/bocian_długi.png" alt="Stowarzyszenie BOCIAN Logo" class="main-logo">
+            <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" class="logo">
+        </div> 
         <h1>Aktualności</h1>
         <nav>
             <ul>
@@ -72,7 +75,7 @@
                         articleElement.innerHTML = `
                             <h3>${article.title}</h3>
                             <p>${article.summary}</p>
-                            <p><a href="${article.url}">Read more...</a></p>
+                            <!--<p><a href="${article.url}">Read more...</a></p> -->
                             <p><small>Published on: ${article.publishedAt}</small></p>
                         `;
                         newsFeed.appendChild(articleElement);

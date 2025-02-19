@@ -8,7 +8,10 @@
 </head>
 <body>
     <header>
-        <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" style="width:100px;height:auto;">
+        <div class="header-images">
+            <img src="images/bocian_długi.png" alt="Stowarzyszenie BOCIAN Logo" class="main-logo">
+            <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" class="logo">
+        </div>    
         <h1>Kontakt</h1>
         <nav>
             <ul>
@@ -24,14 +27,23 @@
             <p>STOWARZYSZENIE BOCIAN</p>
             <ul>
                 <li>E-mail: hagabocian@gmail.com</li>                
-                <li>Adres: Amerongenstraat 5, 2546VV 's-Gravenhage</li>
+                <li>Adres: 
+                    <ul>
+                        <li>Amerongenstraat 5</li>
+                        <li> 2546VV 's-Gravenhage</li>
+                    </ul>
+                </li>
                 <li>KvK-nummer: 75783673</li>
-                <li>Tel.: +31 685149585 🇵🇱</li>
-                <li>+31 649898344 🇳🇱</li>
+                <li>Tel.:
+                    <ul>
+                        <li>+31 685149585 🇵🇱</li>
+                        <li>+31 649898344 🇳🇱</li>
+                    </ul>
+                </li>
             </ul>
      
         </section>
-        <section>
+        <!-- <section>
             <h2>Kontakt</h2>
             <form action="submit_form.php" method="post">
                 <label for="name">Imię:</label>
@@ -42,7 +54,7 @@
                 <textarea id="message" name="message" required></textarea>
                 <button type="submit">Wyślij</button>
             </form>
-        </section>
+        </section> -->
     </main>
     <footer>
         <p>&copy; 2025 Stowarzyszenie BOCIAN. All rights reserved.</p>

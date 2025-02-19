@@ -1,20 +1,30 @@
 [
   {
-    "title": "News Title 1",
-    "summary": "Summary of the news article 1.",
+    "title": "Pozyskanie środków na zajęcia logopedyczne",
+    "summary": "Pozyskanie środków na zajęcia logopedyczne. Uczniowie z problemami poprawnej wymowy zostali zdiagnozowani przez wykwalifikowanych logopedów i rozpoczęli zajęcia korygujące.",
     "url": "news1.html",
     "publishedAt": "2025-01-01"
   },
   {
-    "title": "News Title 2",
-    "summary": "Summary of the news article 2.",
+    "title": "Pozyskanie środków na opiekę psychologiczną",
+    "summary": "Pozyskanie środków na opiekę psychologiczną. Wsparcie psychologa odbywa się zarówno poprzez pogadanki ogólne, jak również poprzez indywidualne spotkania.",
     "url": "news2.html",
     "publishedAt": "2025-01-02"
   },
   {
-    "title": "TEST NEWS",
-    "summary": "PODSUMOWANIE",
+    "title": "Pozyskanie środków na przygotowanie obsługi technicznej inauguracji konkursu BYĆ POLAKIEM",
+    "summary": "Pozyskanie środków na przygotowanie obsługi technicznej inauguracji konkursu BYĆ POLAKIEM",
+    "url": "http://localhost:3000/index.html",
+    "publishedAt": "2025-02-05"
+  }
+  ,
+  {
+    "title": "Nowi sponsorzy",
+    "summary": "Stowarzyszenie dziękuje wszystkim sponsorom i darczyńcom. Złotym sponsorem w grudniu 2024 został Pan Patrick Salub, który przyczynił się do sfinansowania Dnia Świątecznego w Szkole Polskiej.",
     "url": "http://localhost:3000/index.html",
     "publishedAt": "2025-02-05"
   }
 ]
+
+
+
