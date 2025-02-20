@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt - Stowarzyszenie BOCIAN</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Stowarzyszenie BOCIAN wspiera Szkołę Polską im. Marianny Orańskiej przy Ambasadzie RP w Hadze.">
+    <meta name="keywords" content="Stowarzyszenie BOCIAN, Szkoła Polska, Haga, edukacja, wsparcie">
+
 </head>
 <body>
     <header>
@@ -12,7 +16,8 @@
             <img src="images/bocian_długi.png" alt="Stowarzyszenie BOCIAN Logo" class="main-logo">
             <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" class="logo">
         </div>    
-        <h1>Kontakt</h1>
+        <h1>Witamy na stronie STOWARZYSZENIA BOCIAN</h1>
+        <h2>Kontakt</h2>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -63,6 +68,23 @@
             <a href="https://twitter.com">Twitter</a>, 
             <a href="https://instagram.com">Instagram</a>
         </p>
+        <button onclick="topFunction()" id="backToTopBtn">Back to Top</button>
     </footer>
+    <script>
+        // Back to Top Button Script
+        var mybutton = document.getElementById("backToTopBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>

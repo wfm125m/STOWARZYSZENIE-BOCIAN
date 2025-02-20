@@ -1,9 +1,9 @@
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
+body, html {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
 
 header {
@@ -11,6 +11,9 @@ header {
     color: white;
     padding: 10px 0;
     text-align: center;
+    position: relative; /* Ensure the header is positioned relative for absolute positioning of the logo */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .header-images {
@@ -33,15 +36,24 @@ header {
 .header-images .logo {
     position: absolute;
     top: 50%;
-    right: 0; /* Position the logo to the right side */
+    right: 2%; /* Position the logo to the right side */
     transform: translateY(-50%);
     width: 20%; /* Adjust the size as needed */
     height: auto;
 }
-
+header h1 {
+    position: absolute;
+    top: 20%; /* Adjust this value to position the h1 vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the h1 horizontally and vertically */
+    color: white; /* Ensure the text color contrasts with the background */
+    font-size: 2em; /* Adjust the font size as needed */
+    z-index: 1; /* Ensure the h1 is on top of the images */
+}
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -66,6 +78,7 @@ footer {
     padding: 20px;
     position: relative;
     width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Responsive design for mobile devices */
