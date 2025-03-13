@@ -32,25 +32,30 @@
             </picture>
             <img src="images/bocian_logo.png" alt="Stowarzyszenie BOCIAN Logo" class="logo">
         </div> 
-        <h1>Witamy na stronie STOWARZYSZENIA BOCIAN</h1>
-        <h2>Aktualności</h2>
+        <h1 data-lang-en="Welcome to the STOWARZYSZENIE BOCIAN website" data-lang-nl="Welkom op de website van STOWARZYSZENIE BOCIAN" data-lang-pl="Witamy na stronie STOWARZYSZENIA BOCIAN">Witamy na stronie STOWARZYSZENIA BOCIAN</h1>
+        <h2 data-lang-en="News" data-lang-nl="Nieuws">Aktualności</h2>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="news.html">Aktualności</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="index.html" data-lang-en="Home" data-lang-nl="Hoofdpagina" data-lang-pl="Home">Home</a></li>
+                <li><a href="news.html" data-lang-en="News" data-lang-nl="Nieuws" data-lang-pl="Aktualności">Aktualności</a></li>
+                <li><a href="contact.html" data-lang-en="Contact" data-lang-nl="Contact" data-lang-pl="Kontakt">Kontakt</a></li>
             </ul>
         </nav>
+        <div class="language-switcher">
+            <button onclick="setLanguage('pl')">PL</button>
+            <button onclick="setLanguage('en')">EN</button>
+            <button onclick="setLanguage('nl')">NL</button>
+        </div>
     </header>
     <main>
         <section id="news-feed">
-            <h2>Aktualności</h2>
-            <p>Wszystkie najnowsze wiadomości i aktualizacje dotyczące Stowarzyszenia BOCIAN.</p>
+            <h2 data-lang-en="News" data-lang-nl="Nieuws" data-lang-pl="Aktualności">Aktualności</h2>
+            <p data-lang-en="All the latest news and updates about the BOCIAN Association." data-lang-nl="Alle laatste nieuws en updates over de BOCIAN Vereniging." data-lang-pl="Wszystkie najnowsze wiadomości i aktualizacje dotyczące Stowarzyszenia BOCIAN.">Wszystkie najnowsze wiadomości i aktualizacje dotyczące Stowarzyszenia BOCIAN.</p>
         </section>        
     </main>
     <footer>
         <p>&copy; 2025 Stowarzyszenie BOCIAN. All rights reserved.</p>
-        <p>Follow us on 
+        <p data-lang-en="Follow us on" data-lang-nl="Volg ons op" data-lang-pl="Follow us on">Follow us on 
             <a href="https://facebook.com">Facebook</a>, 
             <a href="https://twitter.com">Twitter</a>, 
             <a href="https://instagram.com">Instagram</a>
@@ -89,8 +94,7 @@
                 })
                 .catch(error => console.error('Error fetching news:', error));
         });
-    </script>
-    <script>
+
         // Back to Top Button Script
         var mybutton = document.getElementById("backToTopBtn");
         window.onscroll = function() {scrollFunction()};
@@ -104,6 +108,17 @@
         function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
+        }
+
+        // Language switcher script
+        function setLanguage(language) {
+            document.querySelectorAll('[data-lang-en]').forEach(function(element) {
+                if (language === 'pl') {
+                    element.textContent = element.getAttribute('data-lang-pl') || element.textContent;
+                } else {
+                    element.textContent = element.getAttribute('data-lang-' + language);
+                }
+            });
         }
     </script>
 </body>
